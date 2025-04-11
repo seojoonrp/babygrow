@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
-import Navigation from './Navigation';
+import React, { useEffect, useState } from 'react';
 import { Image } from "react-native";
+import * as Font from 'expo-font';
+import Navigation from './Navigation';
 
 const App = () => {
   prefetchImages = [
@@ -15,6 +16,15 @@ const App = () => {
       Image.prefetch(uri);
     });
   }, []);
+
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  useEffect(() => {
+    Font.loadAsync({
+      'MurukMuruk': require("./assets/fonts/KCC-Murukmuruk.ttf"),
+    }).then(() => setFontsLoaded(true))
+  }, []);
+  if (!fontsLoaded) return null;
 
   return (
     <Navigation />

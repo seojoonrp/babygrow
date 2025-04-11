@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
@@ -9,12 +9,25 @@ const HomeScreen = () => {
     <View style={Styles.container}>
       <View style={Styles.bar} />
       <View style={Styles.pinkBackground}>
+        <Text style={Styles.title}>잘자라{"\n"}우리아가</Text>
         <TouchableOpacity
           style={Styles.startButton}
           onPress={() => navigation.navigate('Phase1GameScreen')}
         >
           <Text style={Styles.buttonText}>START</Text>
         </TouchableOpacity>
+        <Image
+          style={[Styles.image, { top: 42, left: 32 }]}
+          source={require("../assets/images/pillow.png")}
+        />
+        <Image
+          style={[Styles.image, { top: 212, left: 2 }]}
+          source={require("../assets/images/blanket.png")}
+        />
+        <Image
+          style={[Styles.image, { top: 48, left: 55 }]}
+          source={require("../assets/images/baby.png")}
+        />
       </View>
       <View style={Styles.bar} />
     </View>
@@ -28,7 +41,8 @@ const Styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
   bar: {
     backgroundColor: '#F7C89C',
@@ -48,18 +62,37 @@ const Styles = StyleSheet.create({
     borderRadius: 13,
     marginVertical: -10
   },
+  image: {
+    position: 'absolute',
+    zIndex: 1,
+  },
+  title: {
+    marginTop: 100,
+    color: '#F8DCAF',
+    textAlign: 'center',
+    fontSize: 80,
+    fontFamily: 'MurukMuruk',
+    fontWeight: 400,
+    lineHeight: 80,
+    zIndex: 2,
+  },
   startButton: {
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 39,
-    paddingVertical: 12,
+    paddingVertical: 6,
     backgroundColor: '#F8DCAF',
     borderColor: 'white',
     borderWidth: 3,
     borderRadius: 13,
+    zIndex: 3
   },
   buttonText: {
-    fontSize: 15,
-    color: 'white'
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 24,
+    fontFamily: 'MurukMuruk',
+    fontWeight: 400,
+    fontStyle: 'normal',
   }
 })
