@@ -1,12 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import Timer from "../components/Timer";
 
 const GameScreen = () => {
   const navigation = useNavigation();
 
   return (
     <View style={Styles.container}>
+      <Timer
+        duration={30}
+        onComplete={() => navigation.navigate('ResultScreen', { screen: 'ResultScreen' })}
+      />
       <Text style={Styles.titleText}>게임화면임</Text>
       <TouchableOpacity
         style={Styles.navigateButton}
