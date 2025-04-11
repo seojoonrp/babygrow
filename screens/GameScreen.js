@@ -6,10 +6,8 @@ import GamePanel from "../components/GamePanel";
 
 const GameScreen = () => {
   const navigation = useNavigation();
-
   return (
-    <GamePanel>
-    </GamePanel>
+      <GamePanel></GamePanel>
   )
 }
 

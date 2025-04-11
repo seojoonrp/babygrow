@@ -1,17 +1,17 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity,Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import img1 from "./babygrow/baby.png";
+import img1 from "../baby.png";
 
 const GamePanel = () => {
   const navigation = useNavigation();
 
   return (
     <View style={Styles.container}>
-      <Text style={Styles.titleText}>게임 컴포넨트임</Text>
+      \<Text style={Styles.titleText}>게임컴포넨트임</Text>
       <TouchableOpacity>
         <Image
-        style={styles.stretch}
+        style={Styles.navigateButton}
         source={img1}
         />
         onPress={() => navigation.navigate('ResultScreen', { screen: 'ResultScreen' })}
