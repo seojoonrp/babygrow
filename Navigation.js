@@ -14,6 +14,7 @@ const StackScreen = () => {
   return (
     <Stack.Navigator
       initialRouteName='HomeScreen'
+      screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name='HomeScreen' component={HomeScreen} />
       <Stack.Screen name='Phase1GameScreen' component={Phase1GameScreen} />
