@@ -3,10 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 import HomeScreen from './screens/HomeScreen';
-import GameScreen from './screens/GameScreen';
+import Phase1GameScreen from './screens/Phase1GameScreen';
 import ResultScreen from './screens/ResultScreen';
-import FirstStartScreen from './screens/FirstStartScreen';
-import FirstSecondScreen from './screens/FirstSecondScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,11 +14,8 @@ const StackScreen = () => {
       initialRouteName='HomeScreen'
     >
       <Stack.Screen name='HomeScreen' component={HomeScreen} />
-      <Stack.Screen name='GameScreen' component={GameScreen} />
+      <Stack.Screen name='Phase1GameScreen' component={Phase1GameScreen} />
       <Stack.Screen name='ResultScreen' component={ResultScreen} />
-      <Stack.Screen name='FirstStartScreen' component={FirstStartScreen} />
-      <Stack.Screen name='FirstSecondScreen' component={FirstSecondScreen} />
-      <Stack.Screen name='SecondStartScreen' component={SecondStartScreen} />
     </Stack.Navigator>
   )
 }

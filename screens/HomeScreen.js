@@ -10,9 +10,9 @@ const HomeScreen = () => {
       <Text style={Styles.titleText}>홈화면임</Text>
       <TouchableOpacity
         style={Styles.navigateButton}
-        onPress={() => navigation.navigate('FirstStartScreen', { screen: 'FirstStartScreen' })}
+        onPress={() => navigation.navigate('Phase1GameScreen', { screen: 'Phase1GameScreen' })}
       >
-        <Text style={Styles.buttonText}>시작하기!</Text>
+        <Text style={Styles.buttonText}>START</Text>
       </TouchableOpacity>
     </View>
   )

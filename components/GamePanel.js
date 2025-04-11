@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+
 import babyImage from "../images/baby.png";
 
 const GamePanel = () => {
@@ -12,14 +13,18 @@ const GamePanel = () => {
       <ImageBackground
         source={babyImage}
         style={Styles.imageBg}
-        resizeMode="contain"
+        resizeMode="cover"
       >
         <TouchableOpacity
-          style={Styles.circleButton}
+          style={[Styles.circleButton, { left: 22, bottom: 60 }]}
           onPress={() => setScore(score + 1)}
         >
         </TouchableOpacity>
-
+        <TouchableOpacity
+          style={[Styles.circleButton, { right: 22, bottom: 80 }]}
+          onPress={() => setScore(score + 1)}
+        >
+        </TouchableOpacity>
         <Text style={Styles.scoreText}>Score: {score}</Text>
       </ImageBackground>
     </View>
@@ -30,27 +35,23 @@ export default GamePanel;
 
 const Styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 10,
+    flex: 1,
   },
   imageBg: {
-    width: 300,
-    height: 400,
+    width: 251,
+    height: 480,
     justifyContent: 'center',
     alignItems: 'center',
   },
   circleButton: {
-    width: 100,
-    height: 100,
+    width: 70,
+    height: 70,
     backgroundColor: 'rgba(0,0,0,0.6)',
-    borderRadius: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 20,
+    borderRadius: 35,
+    position: 'absolute',
   },
   scoreText: {
-    color: 'white',
+    color: 'black',
     fontSize: 20,
     marginTop: 10,
   },

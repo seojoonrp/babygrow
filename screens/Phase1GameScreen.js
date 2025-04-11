@@ -4,10 +4,10 @@ import { useNavigation } from "@react-navigation/native";
 import GamePanel from "../components/GamePanel";
 import Timer from "../components/Timer";
 
-const GameScreen = () => {
+const Phase1GameScreen = () => {
   const navigation = useNavigation();
   return (
-    <View style={Styles}>
+    <View style={Styles.container}>
       <Timer
         duration={3000}
         onComplete={() => navigation.navigate('ResultScreen', { screen: 'ResultScreen' })}
@@ -17,7 +17,7 @@ const GameScreen = () => {
   )
 }
 
-export default GameScreen;
+export default Phase1GameScreen;
 
 const Styles = StyleSheet.create({
   container: {
@@ -26,5 +26,5 @@ const Styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
 })
