@@ -2,13 +2,29 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import GamePanel from "../components/GamePanel";
-
+import Timer from "../components/Timer";
 
 const GameScreen = () => {
   const navigation = useNavigation();
   return (
-      <GamePanel></GamePanel>
+    <View style={Styles}>
+      <Timer
+        duration={3000}
+        onComplete={() => navigation.navigate('ResultScreen', { screen: 'ResultScreen' })}
+      />
+      <GamePanel />
+    </View>
   )
 }
 
 export default GameScreen;
+
+const Styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+})

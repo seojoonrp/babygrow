@@ -6,6 +6,7 @@ import HomeScreen from './screens/HomeScreen';
 import GameScreen from './screens/GameScreen';
 import ResultScreen from './screens/ResultScreen';
 import FirstStartScreen from './screens/FirstStartScreen';
+import FirstSecondScreen from './screens/FirstSecondScreen';
 
 const Stack = createStackNavigator();
 
