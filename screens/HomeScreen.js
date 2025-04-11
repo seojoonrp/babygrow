@@ -12,7 +12,7 @@ const HomeScreen = () => {
         style={Styles.navigateButton}
         onPress={() => navigation.navigate('GameScreen', { screen: 'GameScreen' })}
       >
-        <Text style={Styles.buttonText}>게임화면 가기</Text>
+        <Text style={Styles.buttonText}>시작하기!</Text>
       </TouchableOpacity>
     </View>
   )
