@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import GamePanel from "../components/GamePanel";
+import GamePanel from "../components/Phase1GamePanel";
 import Timer from "../components/Timer";
 
 const Phase2GameScreen = () => {
