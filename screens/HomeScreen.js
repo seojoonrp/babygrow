@@ -7,13 +7,16 @@ const HomeScreen = () => {
 
   return (
     <View style={Styles.container}>
-      <Text style={Styles.titleText}>홈화면임</Text>
-      <TouchableOpacity
-        style={Styles.navigateButton}
-        onPress={() => navigation.navigate('Phase1GameScreen')}
-      >
-        <Text style={Styles.buttonText}>START</Text>
-      </TouchableOpacity>
+      <View style={Styles.bar} />
+      <View style={Styles.pinkBackground}>
+        <TouchableOpacity
+          style={Styles.startButton}
+          onPress={() => navigation.navigate('Phase1GameScreen')}
+        >
+          <Text style={Styles.buttonText}>START</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={Styles.bar} />
     </View>
   )
 }
@@ -27,14 +30,33 @@ const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  titleText: {
-    fontSize: 20
+  bar: {
+    backgroundColor: '#F7C89C',
+    width: 361,
+    height: 20,
+    borderRadius: 10,
+    zIndex: 2
   },
-  navigateButton: {
-    backgroundColor: 'black',
-    marginTop: '10%',
-    padding: 7,
-    borderRadius: 4
+  pinkBackground: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FEE5E5',
+    width: 361,
+    height: 566,
+    borderRadius: 13,
+    marginVertical: -10
+  },
+  startButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 39,
+    paddingVertical: 12,
+    backgroundColor: '#F8DCAF',
+    borderColor: 'white',
+    borderWidth: 3,
+    borderRadius: 13,
   },
   buttonText: {
     fontSize: 15,

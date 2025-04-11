@@ -3,10 +3,17 @@ import Navigation from './Navigation';
 import { Image } from "react-native";
 
 const App = () => {
-  useEffect(() => {
-    const imageUri = Image.resolveAssetSource(require("./images/baby.png")).uri;
+  prefetchImages = [
+    require("./assets/images/baby.png"),
+    require("./assets/images/blanket.png"),
+    require("./assets/images/pillow.png"),
+  ];
 
-    Image.prefetch(imageUri);
+  useEffect(() => {
+    prefetchImages.forEach(img => {
+      const uri = Image.resolveAssetSource(img).uri;
+      Image.prefetch(uri);
+    });
   }, []);
 
   return (
