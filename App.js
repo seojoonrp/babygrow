@@ -8,6 +8,7 @@ const App = () => {
     require("./assets/images/baby.png"),
     require("./assets/images/blanket.png"),
     require("./assets/images/pillow.png"),
+    require("./assets/images/title.png"),
   ];
 
   useEffect(() => {

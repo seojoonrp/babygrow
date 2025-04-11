@@ -9,7 +9,7 @@ const HomeScreen = () => {
     <View style={Styles.container}>
       <View style={Styles.bar} />
       <View style={Styles.pinkBackground}>
-        <Text style={Styles.title}>잘자라{"\n"}우리아가</Text>
+        {/* <Text style={Styles.title}>잘자라{"\n"}우리아가</Text> */}
         <TouchableOpacity
           style={Styles.startButton}
           onPress={() => navigation.navigate('Phase1GameScreen')}
@@ -27,6 +27,10 @@ const HomeScreen = () => {
         <Image
           style={[Styles.image, { top: 48, left: 55 }]}
           source={require("../assets/images/baby.png")}
+        />
+        <Image
+          style={[Styles.image, { top: 225, left: 47 }]}
+          source={require("../assets/images/title.png")}
         />
       </View>
       <View style={Styles.bar} />
@@ -55,7 +59,7 @@ const Styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     backgroundColor: '#FEE5E5',
     width: 361,
     height: 566,
@@ -66,21 +70,12 @@ const Styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 1,
   },
-  title: {
-    marginTop: 100,
-    color: '#F8DCAF',
-    textAlign: 'center',
-    fontSize: 80,
-    fontFamily: 'MurukMuruk',
-    fontWeight: 400,
-    lineHeight: 80,
-    zIndex: 2,
-  },
   startButton: {
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 39,
     paddingVertical: 6,
+    marginTop: 394,
     backgroundColor: '#F8DCAF',
     borderColor: 'white',
     borderWidth: 3,
@@ -95,4 +90,14 @@ const Styles = StyleSheet.create({
     fontWeight: 400,
     fontStyle: 'normal',
   }
+  // title: {
+  //   marginTop: 100,
+  //   color: '#F8DCAF',
+  //   textAlign: 'center',
+  //   fontSize: 80,
+  //   fontFamily: 'MurukMuruk',
+  //   fontWeight: 400,
+  //   lineHeight: 80,
+  //   zIndex: 2,
+  // },
 })
