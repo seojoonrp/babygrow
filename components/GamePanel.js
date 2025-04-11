@@ -8,7 +8,7 @@ const GamePanel = () => {
 
   return (
     <View style={Styles.container}>
-      \<Text style={Styles.titleText}>게임컴포넨트임</Text>
+      <Text style={Styles.titleText}>게임컴포넨트임</Text>
       <TouchableOpacity>
         <Image
         style={Styles.navigateButton}

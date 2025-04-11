@@ -1,24 +1,22 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React, {useEffect} from "react";
+import { View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const HomeScreen = () => {
+const FirstStartScreen = () => {
   const navigation = useNavigation();
-
+  useEffect(()=>{
+    setTimeout(() => {
+      navigation.navigate('GameScreen');
+    }, 3000);
+  })
   return (
     <View style={Styles.container}>
-      <Text style={Styles.titleText}>홈화면임</Text>
-      <TouchableOpacity
-        style={Styles.navigateButton}
-        onPress={() => navigation.navigate('FirstStartScreen', { screen: 'FirstStartScreen' })}
-      >
-        <Text style={Styles.buttonText}>시작하기!</Text>
-      </TouchableOpacity>
+      <Text>1단계 start~</Text>
     </View>
   )
 }
 
-export default HomeScreen;
+export default FirstStartScreen;
 
 const Styles = StyleSheet.create({
   container: {
