@@ -10,15 +10,9 @@ const ResultScreen = () => {
       <Text style={Styles.titleText}>결과화면임</Text>
       <TouchableOpacity
         style={Styles.navigateButton}
-        onPress={() => navigation.navigate('HomeScreen', { screen: 'HomeScreen' })}
+        onPress={() => navigation.navigate('HomeScreen')}
       >
-        <Text style={Styles.buttonText}>홈화면 가기</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={Styles.navigateButton}
-        onPress={() => navigation.navigate('GameScreen', { screen: 'GameScreen' })}
-      >
-        <Text style={Styles.buttonText}>게임화면 가기</Text>
+        <Text style={Styles.buttonText}>내 아기 다시 키우기</Text>
       </TouchableOpacity>
     </View>
   )
