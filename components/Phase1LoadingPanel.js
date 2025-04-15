@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 
 const Phase1LoadingPanel = () => {
   return (
     <View style={Styles.container}>
       <Text style={[Styles.text, { color: '#F7C89C' }]}>level 1</Text>
+      <Image style={Styles.image} source={require('../assets/images/phase1LoadingImage.png')} />
       <Text style={Styles.text}>
         <Text>아기가 자고 있어요!{"\n"}</Text>
         <Text style={{ color: '#FF4E4E' }}>무릎</Text>
@@ -35,5 +36,8 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 24,
     color: '#F8DCAF',
+  },
+  image: {
+    marginVertical: 14,
   }
 })

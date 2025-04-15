@@ -35,7 +35,6 @@ const HomeScreen = () => {
         />
       </View>
       <View style={Styles.bar} />
-      <Phase1LoadingPanel />
     </View>
   )
 }
