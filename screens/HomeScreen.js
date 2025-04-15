@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import Phase1LoadingPanel from "../components/Phase1LoadingPanel";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -34,6 +35,7 @@ const HomeScreen = () => {
         />
       </View>
       <View style={Styles.bar} />
+      <Phase1LoadingPanel />
     </View>
   )
 }

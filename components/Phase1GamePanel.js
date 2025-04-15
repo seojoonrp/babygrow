@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import babyImage from "../images/baby.png";
+import babyImage from "../assets/images/baby.png";
 
 const GamePanel = () => {
   const navigation = useNavigation();
