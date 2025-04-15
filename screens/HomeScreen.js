@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import Phase1LoadingPanel from "../components/Phase1LoadingPanel";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -10,7 +9,6 @@ const HomeScreen = () => {
     <View style={Styles.container}>
       <View style={Styles.bar} />
       <View style={Styles.pinkBackground}>
-        {/* <Text style={Styles.title}>잘자라{"\n"}우리아가</Text> */}
         <TouchableOpacity
           style={Styles.startButton}
           onPress={() => navigation.navigate('Phase1GameScreen')}

@@ -4,6 +4,8 @@ import * as Font from 'expo-font';
 import Navigation from './Navigation';
 
 const App = () => {
+  // 이미지 로드
+
   prefetchImages = [
     require("./assets/images/baby.png"),
     require("./assets/images/blanket.png"),
@@ -17,6 +19,9 @@ const App = () => {
       Image.prefetch(uri);
     });
   }, []);
+
+
+  // 폰트 로드
 
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
