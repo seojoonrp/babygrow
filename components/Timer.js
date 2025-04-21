@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet } from "react-native";
 
-const Timer = ({ duration, onComplete }) => {
+const Timer = ({ duration, onComplete, isActive }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    if (!isActive) return;
+
     const interval = 100;
     const totalSteps = duration * 1000 / interval;
     let curStep = 0;
@@ -20,7 +22,7 @@ const Timer = ({ duration, onComplete }) => {
     }, interval);
 
     return () => clearInterval(timer);
-  }, [duration, onComplete]);
+  }, [duration, onComplete, isActive]);
 
   return (
     <View style={Styles.background}>
