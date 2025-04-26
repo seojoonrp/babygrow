@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import GamePanel from "../components/Phase1GamePanel";
+
 import Timer from "../components/Timer";
+import Phase2GamePanel from "../components/Phase2GamePanel";
+import Phase2LoadingPanel from "../components/Phase2LoadingPanel";
 
 const Phase2GameScreen = () => {
   const navigation = useNavigation();
+
+  const [isLoadingComplete, setIsLoadingComplete] = useState(false);
+  const handleLoadingComplete = () => {
+    setIsLoadingComplete(true);
+  }
+
   return (
     <View style={Styles.container}>
+      {!isLoadingComplete &&
+        <View style={Styles.loadingPanel} >
+          <Phase2LoadingPanel
+            duration={3}
+            onComplete={handleLoadingComplete}
+          />
+        </View>
+      }
       <Timer
-        duration={5}
-        onComplete={() => navigation.navigate('Phase3GameScreen')}
+        duration={10}
+        onComplete={() => navigation.navigate('Phase2EndScreen')}
+        isActive={isLoadingComplete}
       />
-      <GamePanel />
+
+      <Phase2GamePanel />
     </View>
   )
 }
@@ -21,10 +39,19 @@ export default Phase2GameScreen;
 
 const Styles = StyleSheet.create({
   container: {
+    position: 'relative',
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
+  loadingPanel: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    left: 0,
+    zIndex: 10,
+  }
 })

@@ -26,7 +26,7 @@ const Phase1GameScreen = () => {
       }
       <Timer
         duration={10}
-        onComplete={() => navigation.navigate('Phase2GameScreen')}
+        onComplete={() => navigation.navigate('Phase1EndScreen')}
         isActive={isLoadingComplete}
       />
 
