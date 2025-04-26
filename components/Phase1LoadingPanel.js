@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-
+import {Animated} from 'react-native';
 const Phase1LoadingPanel = () => {
   return (
     <View style={Styles.container}>
