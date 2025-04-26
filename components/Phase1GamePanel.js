@@ -10,6 +10,7 @@ const GamePanel = () => {
 
   return (
     <View style={Styles.container}>
+      <Text style={Styles.scoreText}>Score: {score}</Text>
       <ImageBackground
         source={babyImage}
         style={Styles.imageBg}
@@ -25,7 +26,7 @@ const GamePanel = () => {
           onPress={() => setScore(score + 1)}
         >
         </TouchableOpacity>
-        <Text style={Styles.scoreText}>Score: {score}</Text>
+        
       </ImageBackground>
     </View>
   );
@@ -51,8 +52,10 @@ const Styles = StyleSheet.create({
     position: 'absolute',
   },
   scoreText: {
+    fontFamily: 'MurukMuruk',
     color: 'black',
-    fontSize: 20,
-    marginTop: 10,
+    fontSize: 50,
+    marginTop: 20,
+    textAlign: 'center',
   },
 });

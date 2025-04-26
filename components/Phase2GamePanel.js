@@ -72,6 +72,7 @@ const Styles = StyleSheet.create({
     position: 'absolute',
   },
   scoreText: {
+    fontFamily: 'MurukMuruk',
     color: 'black',
     fontSize: 50,
     marginTop: 20,

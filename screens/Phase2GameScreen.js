@@ -24,13 +24,18 @@ const Phase2GameScreen = () => {
           />
         </View>
       }
-      <Timer
+      {isLoadingComplete&&
+      <View style={Styles.mainscreen}>
+        <Timer
         duration={10}
         onComplete={() => navigation.navigate('Phase2EndScreen')}
         isActive={isLoadingComplete}
       />
-
-      <Phase2GamePanel />
+      <Phase2GamePanel
+      isActive={isLoadingComplete}
+      />
+      </View>
+      } 
     </View>
   )
 }
@@ -40,6 +45,14 @@ export default Phase2GameScreen;
 const Styles = StyleSheet.create({
   container: {
     position: 'relative',
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  mainscreen: {
+    position: 'absolute',
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
