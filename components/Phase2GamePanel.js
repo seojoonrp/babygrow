@@ -3,17 +3,18 @@ import { Animated, Easing, View, Text, StyleSheet, TouchableOpacity, ImageBackgr
 import { useNavigation } from "@react-navigation/native";
 
 import babyImage from "../assets/images/baby.png";
+import BabyOnBed from "./BabyOnBed";
 
 const Phase2GamePanel = () => {
-  const navigation = useNavigation();
   const [score, setScore] = useState(0);
+
   const rotation = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.loop(
       Animated.timing(rotation, {
         toValue: 1,
-        duration: 2000,
+        duration: 3000,
         easing: Easing.linear,
         useNativeDriver: true,
       })
@@ -24,25 +25,32 @@ const Phase2GamePanel = () => {
     inputRange: [0, 1],
     outputRange: ['0deg', '360deg'],
   });
+
   const animatedStyle = {
     transform: [{ rotate: rotateInterpolate }],
+    position: 'absolute',
+    left: 55,
+    top: 52,
+    zIndex: 2,
   };
+
   return (
-    <View style={Styles.container}>
-      <Text style={Styles.scoreText}>Score: {score}</Text>
+    <View style={styles.container}>
+      {/* <Text style={Styles.scoreText}>Score: {score}</Text> */}
+      <BabyOnBed isRelative={true} isClickable={false} isBaby={false} />
       <Animated.View style={[animatedStyle]}>
         <ImageBackground
           source={babyImage}
-          style={Styles.imageBg}
+          style={styles.imageBg}
           resizeMode="cover"
         >
           <TouchableOpacity
-            style={[Styles.circleButton, { left: 22, bottom: 60 }]}
+            style={[styles.circleButton, { left: 22, bottom: 60 }]}
             onPress={() => setScore(score + 1)}
           >
           </TouchableOpacity>
           <TouchableOpacity
-            style={[Styles.circleButton, { right: 22, bottom: 80 }]}
+            style={[styles.circleButton, { right: 22, bottom: 80 }]}
             onPress={() => setScore(score + 1)}
           >
           </TouchableOpacity>
@@ -54,9 +62,9 @@ const Phase2GamePanel = () => {
 
 export default Phase2GamePanel;
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: 13,
   },
   imageBg: {
     width: 251,

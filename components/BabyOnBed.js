@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 
-const BabyOnBed = ({ isRelative, isClickable }) => {
+const BabyOnBed = ({ isRelative, isClickable, isBaby = true }) => {
   const wrapperStyle = isRelative ? styles.relativeWrapper : styles.absoluteWrapper;
 
   return (
@@ -16,10 +16,12 @@ const BabyOnBed = ({ isRelative, isClickable }) => {
           style={[styles.image, { top: 212, left: 2 }]}
           source={require("../assets/images/blanket.png")}
         />
-        <Image
-          style={[styles.image, { top: 48, left: 55 }]}
-          source={require("../assets/images/baby.png")}
-        />
+        {isBaby &&
+          <Image
+            style={[styles.image, { top: 48, left: 55 }]}
+            source={require("../assets/images/baby.png")}
+          />
+        }
       </View>
       <View style={styles.bar} />
       {isClickable && // 버튼을 누를 수 있냐? 게임 중에는 O. 시작/결과화면에는 X. 이거 만들어야됨

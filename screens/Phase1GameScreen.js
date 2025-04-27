@@ -5,7 +5,6 @@ import { useNavigation } from "@react-navigation/native";
 import Timer from "../components/Timer";
 import Phase1GamePanel from "../components/Phase1GamePanel";
 import Phase1LoadingPanel from "../components/Phase1LoadingPanel";
-import BabyOnBed from "../components/BabyOnBed";
 
 const Phase1GameScreen = () => {
   const navigation = useNavigation();
@@ -27,7 +26,7 @@ const Phase1GameScreen = () => {
       }
       <Text style={styles.levelText}>level 1</Text>
       <Timer
-        duration={3000}
+        duration={10}
         onComplete={() => navigation.navigate('Phase1EndScreen')}
         isActive={isLoadingComplete}
       />

@@ -7,13 +7,13 @@ const Phase2EndScreen = () => {
 
   return (
     <View style={Styles.container}>
-      <Text style={Styles.text}>2단계 무사히 clear~ {"\n"} </Text>
-      <Text style={Styles.text}>이제 마지막이에요 화이팅!</Text>
+      <Text style={Styles.text}>2단계 end~{"\n"} </Text>
+      <Text style={Styles.text}>어쩌고저쩌고</Text>
       <TouchableOpacity
         style={Styles.startButton}
         onPress={() => navigation.navigate('Phase3GameScreen')}
       >
-        <Text style={Styles.buttonText}>START</Text>
+        <Text style={Styles.buttonText}>3단계 START</Text>
       </TouchableOpacity>
     </View>
   )

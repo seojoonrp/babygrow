@@ -5,8 +5,6 @@ import { useNavigation } from "@react-navigation/native";
 import BabyOnBed from "./BabyOnBed";
 
 const GamePanel = () => {
-  const navigation = useNavigation();
-
   const [score, setScore] = useState(0);
 
   return (
