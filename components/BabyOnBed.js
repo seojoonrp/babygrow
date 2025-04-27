@@ -1,9 +1,11 @@
 import React from 'react';
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 
-const BabyOnBed = ({ isClickable }) => {
+const BabyOnBed = ({ isRelative, isClickable }) => {
+  const wrapperStyle = isRelative ? styles.absoluteWrapper : styles.relativeWrapper;
+
   return (
-    <View style={styles.absoluteWrapper}>
+    <View style={wrapperStyle}>
       <View style={styles.bar} />
       <View style={styles.pinkBackground}>
         <Image
@@ -38,6 +40,11 @@ const styles = StyleSheet.create({
     height: 586,
     transform: [{ translateX: -180.5 }, { translateY: -293 }],
     zIndex: 0,
+  },
+  relativeWrapper: {
+    width: 361,
+    height: 586,
+    alignItems: 'center',
   },
   bar: {
     backgroundColor: '#F7C89C',

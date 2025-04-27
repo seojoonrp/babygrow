@@ -9,8 +9,8 @@ const HomeScreen = () => {
 
   return (
     <View style={Styles.container}>
-      <BabyOnBed isClickable={false} />
-      < Image
+      <BabyOnBed isRelative={false} isClickable={false} />
+      <Image
         style={Styles.titleImage}
         source={require("../assets/images/title.png")}
       />

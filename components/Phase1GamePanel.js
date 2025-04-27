@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import babyImage from "../assets/images/baby.png";
+import BabyOnBed from "./BabyOnBed";
 
 const GamePanel = () => {
   const navigation = useNavigation();
-  const [score, setScore] = useState(0);
 
   return (
     <View style={Styles.container}>
@@ -26,8 +25,9 @@ const GamePanel = () => {
           onPress={() => setScore(score + 1)}
         >
         </TouchableOpacity>
-        
+
       </ImageBackground>
+      <BabyOnBed isClickable={true} />
     </View>
   );
 };
