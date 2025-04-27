@@ -16,7 +16,7 @@ const StackScreen = () => {
   return (
     <Stack.Navigator
       initialRouteName='HomeScreen'
-      screenOptions={{ headerShown: false }} // 위에 스크린/뒤로가기 헤더 안보이게
+    // screenOptions={{ headerShown: false }} // 위에 스크린/뒤로가기 헤더 안보이게
     >
       <Stack.Screen name='HomeScreen' component={HomeScreen} />
       <Stack.Screen name='Phase1GameScreen' component={Phase1GameScreen} />

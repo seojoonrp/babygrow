@@ -26,7 +26,7 @@ const Timer = ({ duration, onComplete, isActive }) => {
 
   return (
     <View style={Styles.background}>
-      <View style={[Styles.bar, { width: `${100 - progress}%` }]} />
+      <View style={[Styles.bar, { width: `${100 - progress * 0.95}%` }]} />
     </View>
   )
 }
@@ -35,13 +35,18 @@ export default Timer;
 
 const Styles = StyleSheet.create({
   background: {
-    width: '60%',
-    height: '2%',
-    backgroundColor: '#ddd',
     alignItems: 'flex-start',
+    width: 358,
+    height: 36,
+    backgroundColor: '#F8DCAF',
+    borderRadius: 18,
+    padding: 4,
+    zIndex: 3,
   },
   bar: {
-    backgroundColor: 'black',
+    backgroundColor: '#FF4E4E',
     height: '100%',
+    borderRadius: 14,
+    overflow: 'hidden',
   }
 })

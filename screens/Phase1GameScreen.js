@@ -16,28 +16,30 @@ const Phase1GameScreen = () => {
   }
 
   return (
-    <View style={Styles.container}>
+    <View style={styles.container}>
       {!isLoadingComplete &&
-        <View style={Styles.loadingPanel} >
+        <View style={styles.loadingPanel} >
           <Phase1LoadingPanel
             duration={3}
             onComplete={handleLoadingComplete}
           />
         </View>
       }
+      <Text style={styles.levelText}>level 1</Text>
       <Timer
-        duration={10}
+        duration={3000}
         onComplete={() => navigation.navigate('Phase1EndScreen')}
         isActive={isLoadingComplete}
       />
       <Phase1GamePanel />
+      <View style={styles.night} />
     </View>
   )
 }
 
 export default Phase1GameScreen;
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     position: 'relative',
     display: 'flex',
@@ -45,14 +47,7 @@ const Styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  mainscreen: {
-    position: 'absolute',
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: 'white',
   },
   loadingPanel: {
     position: 'absolute',
@@ -61,5 +56,22 @@ const Styles = StyleSheet.create({
     top: 0,
     left: 0,
     zIndex: 10,
+  },
+  levelText: {
+    fontFamily: 'MurukMuruk',
+    fontSize: 24,
+    color: '#F8DCAF',
+    zIndex: 3,
+    marginTop: -20,
+  },
+  night: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(45, 53, 95, 0.5)',
+    zIndex: 2,
+    pointerEvents: 'none',
   }
 })

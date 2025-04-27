@@ -1,4 +1,4 @@
-import React, { useState, useRef ,useEffect} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Animated, Easing, View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -7,48 +7,48 @@ import babyImage from "../assets/images/baby.png";
 const Phase2GamePanel = () => {
   const navigation = useNavigation();
   const [score, setScore] = useState(0);
-  const rotation=useRef(new Animated.Value(0)).current;
+  const rotation = useRef(new Animated.Value(0)).current;
 
-  useEffect(()=>{
+  useEffect(() => {
     Animated.loop(
-        Animated.timing(rotation,{
-            toValue:1,
-            duration:2000,
-            easing: Easing.linear,
-            useNativeDriver:true,
-        })
+      Animated.timing(rotation, {
+        toValue: 1,
+        duration: 2000,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      })
     ).start();
-  },[rotation]);
+  }, [rotation]);
 
-  const rotateInterpolate=rotation.interpolate({
-    inputRange: [0,1],
-    outputRange: ['0deg','360deg'],
+  const rotateInterpolate = rotation.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '360deg'],
   });
-  const animatedStyle={
-    transform : [{rotate : rotateInterpolate}],
+  const animatedStyle = {
+    transform: [{ rotate: rotateInterpolate }],
   };
   return (
     <View style={Styles.container}>
-        <Text style={Styles.scoreText}>Score: {score}</Text>
-        <Animated.View style={[animatedStyle]}>
-          <ImageBackground
-            source={babyImage}
-            style={Styles.imageBg}
-            resizeMode="cover"
+      <Text style={Styles.scoreText}>Score: {score}</Text>
+      <Animated.View style={[animatedStyle]}>
+        <ImageBackground
+          source={babyImage}
+          style={Styles.imageBg}
+          resizeMode="cover"
+        >
+          <TouchableOpacity
+            style={[Styles.circleButton, { left: 22, bottom: 60 }]}
+            onPress={() => setScore(score + 1)}
           >
-            <TouchableOpacity
-              style={[Styles.circleButton, { left: 22, bottom: 60 }]}
-              onPress={() => setScore(score + 1)}
-            >
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[Styles.circleButton, { right: 22, bottom: 80 }]}
-              onPress={() => setScore(score + 1)}
-            >
-            </TouchableOpacity>
-          </ImageBackground>
-        </Animated.View>
-        </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[Styles.circleButton, { right: 22, bottom: 80 }]}
+            onPress={() => setScore(score + 1)}
+          >
+          </TouchableOpacity>
+        </ImageBackground>
+      </Animated.View>
+    </View>
   );
 };
 

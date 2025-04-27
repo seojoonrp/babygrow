@@ -7,36 +7,20 @@ import BabyOnBed from "./BabyOnBed";
 const GamePanel = () => {
   const navigation = useNavigation();
 
-  return (
-    <View style={Styles.container}>
-      <Text style={Styles.scoreText}>Score: {score}</Text>
-      <ImageBackground
-        source={babyImage}
-        style={Styles.imageBg}
-        resizeMode="cover"
-      >
-        <TouchableOpacity
-          style={[Styles.circleButton, { left: 22, bottom: 60 }]}
-          onPress={() => setScore(score + 1)}
-        >
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[Styles.circleButton, { right: 22, bottom: 80 }]}
-          onPress={() => setScore(score + 1)}
-        >
-        </TouchableOpacity>
+  const [score, setScore] = useState(0);
 
-      </ImageBackground>
-      <BabyOnBed isClickable={true} />
+  return (
+    <View style={styles.container}>
+      <BabyOnBed isRelative={true} isClickable={true} />
     </View>
   );
 };
 
 export default GamePanel;
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: 13,
   },
   imageBg: {
     width: 251,
