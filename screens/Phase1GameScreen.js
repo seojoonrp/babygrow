@@ -26,7 +26,7 @@ const Phase1GameScreen = () => {
       }
       <Text style={styles.levelText}>Lv.1</Text>
       <Timer
-        duration={10}
+        duration={1000}
         onComplete={() => navigation.navigate('Phase1EndScreen')}
         isActive={isLoadingComplete}
       />
