@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import Timer from "../components/Timer";
 import Phase1GamePanel from "../components/Phase1GamePanel";
 import Phase1LoadingPanel from "../components/Phase1LoadingPanel";
+import Restart from "../components/Restart";
 
 const Phase1GameScreen = () => {
   const navigation = useNavigation();
@@ -24,6 +25,7 @@ const Phase1GameScreen = () => {
           />
         </View>
       }
+      <Restart />
       <Text style={styles.levelText}>Lv.1</Text>
       <Timer
         duration={300}

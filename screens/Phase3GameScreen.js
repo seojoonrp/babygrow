@@ -3,11 +3,13 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import Timer from "../components/Timer";
+import Restart from "../components/Restart";
 
 const Phase3GameScreen = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
+      <Restart />
       <Text style={styles.levelText}>Lv.3</Text>
       <Timer
         duration={10}

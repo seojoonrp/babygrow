@@ -4,12 +4,14 @@ import { useNavigation } from "@react-navigation/native";
 
 import Timer from "../components/Timer";
 import Phase2GamePanel from "../components/Phase2GamePanel";
+import Restart from "../components/Restart";
 
 const Phase2GameScreen = () => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
+      <Restart />
       <Text style={styles.levelText}>Lv.2</Text>
       <Timer
         duration={10}
