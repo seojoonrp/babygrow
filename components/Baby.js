@@ -32,6 +32,10 @@ const Baby = () => {
         style={styles.rightKneeBut}
         onPress={() => setKneeCount(kneeCount + 1)}
       />
+      <TouchableOpacity
+        style={styles.bellyBut}
+        onPress={() => setBellyCount(bellyCount + 1)}
+      />
     </View>
   );
 }
@@ -87,6 +91,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 78,
     right: 32,
+    zIndex: 3,
+  },
+  bellyBut: {
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    width: 110,
+    height: 110,
+    borderRadius: 55,
+    position: 'absolute',
+    bottom: 130,
+    left: 70,
     zIndex: 3,
   }
 });
