@@ -28,7 +28,7 @@ const Phase1GameScreen = () => {
       <Restart />
       <Text style={styles.levelText}>Lv.1</Text>
       <Timer
-        duration={300}
+        duration={10}
         onComplete={() => navigation.navigate('Phase1EndScreen')}
         isActive={isLoadingComplete}
       />

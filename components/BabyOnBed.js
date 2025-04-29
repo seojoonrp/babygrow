@@ -24,10 +24,6 @@ const BabyOnBed = ({ isRelative, isClickable, isBaby = true }) => {
         }
       </View>
       <View style={styles.bar} />
-      {isClickable && // 버튼을 누를 수 있냐? 게임 중에는 O. 시작/결과화면에는 X. 이거 만들어야됨
-        <TouchableOpacity
-        />
-      }
     </View>
   )
 };

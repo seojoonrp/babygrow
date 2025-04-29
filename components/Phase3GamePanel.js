@@ -1,37 +1,24 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Animated, Easing, View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
-
+import {useAnimatedStyle, useSharedValue} from 'react-native-reanimated';
 import Baby from "./Baby";
 import BabyOnBed from "./BabyOnBed";
 
-const Phase2GamePanel = () => {
-  const [score, setScore] = useState(0);
+const Phase3GamePanel = () => {
 
-  const rotation = useRef(new Animated.Value(0)).current;
+  const vibrateTranslateX=useSharedValue(0);
 
-  useEffect(() => {
-    Animated.loop(
-      Animated.timing(rotation, {
-        toValue: 1,
-        duration: 3000,
-        easing: Easing.linear,
-        useNativeDriver: true,
-      })
-    ).start();
-  }, [rotation]);
-
-  const rotateInterpolate = rotation.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '360deg'],
-  });
-
-  const animatedStyle = {
-    transform: [{ rotate: rotateInterpolate }],
-    position: 'absolute',
-    left: 48,
-    top: 52,
-    zIndex: 2,
-  };
+  const vibrate=useCallback(()=>{
+     vibrateTranslateX.value=100;
+  },[]); 
+  
+  const animatedStyle=useAnimatedStyle(()=>{
+    return{
+        transform:[
+            {translateX:vibrateTranslateX.value}
+        ],
+    };
+  },[]);
 
   return (
     <View style={styles.container}>
@@ -44,7 +31,7 @@ const Phase2GamePanel = () => {
   );
 };
 
-export default Phase2GamePanel;
+export default Phase3GamePanel;
 
 const styles = StyleSheet.create({
   container: {

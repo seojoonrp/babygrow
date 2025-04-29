@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import Timer from "../components/Timer";
+import Phase3GamePanel from "../components/Phase3GamePanel";
 import Restart from "../components/Restart";
 
 const Phase3GameScreen = () => {
@@ -16,7 +17,7 @@ const Phase3GameScreen = () => {
         onComplete={() => navigation.navigate('ResultScreen')}
         isActive={true}
       />
-      <Text>3차게임패널~</Text>
+      <Phase3GamePanel />
     </View>
   )
 }
