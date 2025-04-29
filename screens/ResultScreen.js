@@ -6,13 +6,15 @@ const ResultScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={Styles.container}>
-      <Text style={Styles.titleText}>결과화면임</Text>
+    <View style={styles.container}>
+      <View style={styles.heightTextContainer}>
+        <Text style={styles.heightText}>우리 아이 키는...</Text>
+      </View>
       <TouchableOpacity
-        style={Styles.navigateButton}
+        style={styles.navigateButton}
         onPress={() => navigation.navigate('HomeScreen')}
       >
-        <Text style={Styles.buttonText}>내 아기 다시 키우기</Text>
+        <Text style={styles.buttonText}>내 아기 다시 키우기</Text>
       </TouchableOpacity>
     </View>
   )
@@ -20,15 +22,29 @@ const ResultScreen = () => {
 
 export default ResultScreen;
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: '#FFECCD',
   },
-  titleText: {
-    fontSize: 20
+  heightTextContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    paddingHorizontal: 8,
+    marginBottom: 14,
+    backgroundColor: '##FFFEF4',
+    borderColor: '#F7C89C',
+    borderWidth: 4,
+    borderRadius: 13,
+  },
+  heightText: {
+
   },
   navigateButton: {
     backgroundColor: 'black',

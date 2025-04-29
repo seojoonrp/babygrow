@@ -4,35 +4,19 @@ import { useNavigation } from "@react-navigation/native";
 
 import Timer from "../components/Timer";
 import Phase2GamePanel from "../components/Phase2GamePanel";
-import Phase2LoadingPanel from "../components/Phase2LoadingPanel";
 
 const Phase2GameScreen = () => {
   const navigation = useNavigation();
 
-  const [isLoadingComplete, setIsLoadingComplete] = useState(false);
-  const handleLoadingComplete = () => {
-    setIsLoadingComplete(true);
-  }
-
   return (
     <View style={styles.container}>
-      {!isLoadingComplete &&
-        <View style={styles.loadingPanel} >
-          <Phase2LoadingPanel
-            duration={3}
-            onComplete={handleLoadingComplete}
-          />
-        </View>
-      }
       <Text style={styles.levelText}>Lv.2</Text>
       <Timer
         duration={10}
         onComplete={() => navigation.navigate('Phase2EndScreen')}
-        isActive={isLoadingComplete}
+        isActive={true}
       />
-      <Phase2GamePanel
-        isActive={isLoadingComplete}
-      />
+      <Phase2GamePanel />
       <View style={styles.night} />
     </View>
   )
