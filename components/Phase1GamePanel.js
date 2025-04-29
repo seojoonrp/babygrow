@@ -10,8 +10,8 @@ const GamePanel = () => {
 
   return (
     <View style={styles.container}>
-      {/* <BabyOnBed isRelative={true} isClickable={true} /> */}
-      <Baby />
+      <BabyOnBed isRelative={true} isClickable={true} isBaby={false} />
+      <Baby positionStyle={{ position: 'absolute', top: 48, left: 55, zIndex: 2 }} />
     </View>
   );
 };
