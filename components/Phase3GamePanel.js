@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Animated, Easing, View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
-import {useAnimatedStyle, useSharedValue} from 'react-native-reanimated';
+//import {useAnimatedStyle, useSharedValue} from 'react-native-reanimated';
 import Baby from "./Baby";
 import BabyOnBed from "./BabyOnBed";
 
 const Phase3GamePanel = () => {
-
+  {/*
   const vibrateTranslateX=useSharedValue(0);
 
   const vibrate=useCallback(()=>{
@@ -19,7 +19,7 @@ const Phase3GamePanel = () => {
         ],
     };
   },[]);
-
+  */}
   return (
     <View style={styles.container}>
       {/* <Text style={Styles.scoreText}>Score: {score}</Text> */}
