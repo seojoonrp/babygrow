@@ -3,13 +3,15 @@ import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react
 import { useNavigation } from "@react-navigation/native";
 
 import BabyOnBed from "./BabyOnBed";
+import Baby from "./Baby";
 
 const GamePanel = () => {
   const [score, setScore] = useState(0);
 
   return (
     <View style={styles.container}>
-      <BabyOnBed isRelative={true} isClickable={true} />
+      {/* <BabyOnBed isRelative={true} isClickable={true} /> */}
+      <Baby />
     </View>
   );
 };
