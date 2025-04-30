@@ -38,3 +38,5 @@ const App = () => {
 }
 
 export default App;
+
+// git commit test from minsu
