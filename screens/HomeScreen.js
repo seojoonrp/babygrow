@@ -1,12 +1,15 @@
-import React from "react";
+import React,{useContext,useEffect} from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
+import { AppContext } from "../AppContext.js";
 import BabyOnBed from '../components/BabyOnBed.js';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
-
+  const {score,setScore}=useContext(AppContext);
+  useEffect(()=>{
+    setScore(0);
+  },[])
   return (
     <View style={Styles.container}>
       <BabyOnBed isRelative={false} isClickable={false} />
@@ -16,7 +19,7 @@ const HomeScreen = () => {
       />
       <TouchableOpacity
         style={Styles.startButton}
-        onPress={() => navigation.navigate('Phase1GameScreen', { score: 0 })}
+        onPress={() => navigation.navigate('Phase1GameScreen')}
       >
         <Text style={Styles.buttonText}>START</Text>
       </TouchableOpacity>

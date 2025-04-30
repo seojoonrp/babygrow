@@ -1,8 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, {useContext, useRef, useState } from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
-
+import { AppContext } from "../AppContext";
 // Make sure we're receiving score and setScore as props here
-const Baby = ({ positionStyle, score, setScore }) => {
+const Baby = ({ positionStyle}) => {
+  const {score,setScore}=useContext(AppContext);
+
   const [kneeCount, setKneeCount] = useState(0);
   const [bellyCount, setBellyCount] = useState(0);
 
@@ -26,18 +28,12 @@ const Baby = ({ positionStyle, score, setScore }) => {
       bellyTimeoutRef.current = null;
     }, bellyPressDuration);
 
-    // Make sure setScore is a function before calling it
-    if (typeof setScore === 'function') {
-      setScore(score - 1);
-    }
+    setScore(score-1);
   };
 
   const handleKneePress = () => {
     setKneeCount(kneeCount + 1);
-    // Make sure setScore is a function before calling it
-    if (typeof setScore === 'function') {
-      setScore(score + 1);
-    }
+    setScore(score+1);
   }
 
   return (

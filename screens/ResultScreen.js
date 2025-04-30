@@ -1,14 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
+import { AppContext } from "../AppContext";
 const ResultScreen = () => {
   const navigation = useNavigation();
-
+  const {score,setScore}=useContext(AppContext);
   return (
     <View style={styles.container}>
       <View style={styles.heightTextContainer}>
-        <Text style={styles.heightText}>우리 아이 키는...</Text>
+        <Text style={styles.heightText}>우리 아이 키는...{score}</Text>
       </View>
       <TouchableOpacity
         style={styles.navigateButton}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Image } from "react-native";
 import * as Font from 'expo-font';
 import Navigation from './Navigation';
-
+import { AppProvider } from './AppContext';
 const App = () => {
   const [score, setScore] = useState(0);
 
@@ -36,7 +36,10 @@ const App = () => {
   
 
   return (
-    <Navigation score={score} setScore={setScore}/>
+    <AppProvider>
+      <Navigation score={score} setScore={setScore}/>
+    </AppProvider>
+    
   );
 }
 
