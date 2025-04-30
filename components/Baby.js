@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
+// Make sure we're receiving score and setScore as props here
 const Baby = ({ positionStyle, score, setScore }) => {
   const [kneeCount, setKneeCount] = useState(0);
   const [bellyCount, setBellyCount] = useState(0);
@@ -25,19 +26,25 @@ const Baby = ({ positionStyle, score, setScore }) => {
       bellyTimeoutRef.current = null;
     }, bellyPressDuration);
 
-    setScore(score - 1);
+    // Make sure setScore is a function before calling it
+    if (typeof setScore === 'function') {
+      setScore(score - 1);
+    }
   };
 
   const handleKneePress = () => {
     setKneeCount(kneeCount + 1);
-    setScore(score + 1);
+    // Make sure setScore is a function before calling it
+    if (typeof setScore === 'function') {
+      setScore(score + 1);
+    }
   }
 
   return (
     <View style={[styles.container, positionStyle]}>
       <Text style={{ position: 'absolute', top: 10, left: 12 }}>knee: {kneeCount}</Text>
       <Text style={{ position: 'absolute', top: 27, left: 12 }}>belly: {bellyCount}</Text>
-      <Text style={{ position: 'absolute', top: 44, left: 12 }}>score: {score}</Text>
+      <Text style={{ position: 'absolute', top: 10, right: 12 }}>score: {score}</Text>
       <Image
         style={{ zIndex: 2 }}
         source={require('../assets/images/babyBody.png')}

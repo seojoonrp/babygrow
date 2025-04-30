@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 import Timer from "../components/Timer";
 import Phase1GamePanel from "../components/Phase1GamePanel";
@@ -8,8 +8,9 @@ import Phase1LoadingPanel from "../components/Phase1LoadingPanel";
 import Restart from "../components/Restart";
 import Baby from "../components/Baby";
 
-const Phase1GameScreen = ({score, setScore}) => {
+const Phase1GameScreen = ({route}) => {
   const navigation = useNavigation();
+  const score = route.params.score;
 
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
   const handleLoadingComplete = () => {
@@ -30,10 +31,10 @@ const Phase1GameScreen = ({score, setScore}) => {
       <Text style={styles.levelText}>Lv.1</Text>
       <Timer
         duration={10}
-        onComplete={() => navigation.navigate('Phase1EndScreen')}
+        onComplete={() => navigation.navigate('Phase1EndScreen', {score: score})}
         isActive={isLoadingComplete}
       />
-      <Phase1GamePanel score={score} setScore={setScore} />
+      <Phase1GamePanel score={score} />
       <View style={styles.night} />
     </View>
   )

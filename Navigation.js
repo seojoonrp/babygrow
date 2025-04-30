@@ -18,13 +18,41 @@ const StackScreen = ({score, setScore}) => {
       initialRouteName='HomeScreen'
     // screenOptions={{ headerShown: false }} // 위에 스크린/뒤로가기 헤더 안보이게
     >
-      <Stack.Screen name='HomeScreen' component={HomeScreen} />
-      <Stack.Screen name='Phase1GameScreen' component={Phase1GameScreen} score={score} setScore={setScore} />
-      <Stack.Screen name='Phase1EndScreen' component={Phase1EndScreen} initialParams={{score, setScore}} />
-      <Stack.Screen name='Phase2GameScreen' component={Phase2GameScreen} initialParams={{score, setScore}} />
-      <Stack.Screen name='Phase2EndScreen' component={Phase2EndScreen} initialParams={{score, setScore}} />
-      <Stack.Screen name='Phase3GameScreen' component={Phase3GameScreen} initialParams={{score, setScore}} />
-      <Stack.Screen name='ResultScreen' component={ResultScreen} initialParams={{score, setScore}} />
+      <Stack.Screen 
+        name='HomeScreen' 
+        component={HomeScreen} 
+        initialParams={{score, setScore}} 
+      />
+      <Stack.Screen 
+        name='Phase1GameScreen' 
+        component={Phase1GameScreen} 
+        initialParams={{score, setScore}} 
+      />
+      <Stack.Screen 
+        name='Phase1EndScreen' 
+        component={Phase1EndScreen} 
+        initialParams={{score, setScore}} 
+      />
+      <Stack.Screen 
+        name='Phase2GameScreen' 
+        component={Phase2GameScreen} 
+        initialParams={{score, setScore}} 
+      />
+      <Stack.Screen 
+        name='Phase2EndScreen' 
+        component={Phase2EndScreen} 
+        initialParams={{score, setScore}} 
+      />
+      <Stack.Screen 
+        name='Phase3GameScreen' 
+        component={Phase3GameScreen} 
+        initialParams={{score, setScore}} 
+      />
+      <Stack.Screen 
+        name='ResultScreen' 
+        component={ResultScreen} 
+        initialParams={{score, setScore}} 
+      />
     </Stack.Navigator>
   )
 }

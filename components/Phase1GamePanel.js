@@ -5,16 +5,18 @@ import { useNavigation } from "@react-navigation/native";
 import BabyOnBed from "./BabyOnBed";
 import Baby from "./Baby";
 
-const GamePanel = ({ score, setScore }) => {
+// Receive score and setScore as props
+const Phase1GamePanel = ({ score }) => {
+
   return (
     <View style={styles.container}>
       <BabyOnBed isRelative={true} isClickable={true} isBaby={false} />
-      <Baby positionStyle={{ position: 'absolute', top: 48, left: 55, zIndex: 2 }} score={score} setScore={setScore} />
+      <Baby positionStyle={{ position: 'absolute', top: 48, left: 55, zIndex: 2 }} score={score} />
     </View>
   );
 };
 
-export default GamePanel;
+export default Phase1GamePanel;
 
 const styles = StyleSheet.create({
   container: {
