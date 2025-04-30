@@ -1,25 +1,27 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Animated, Easing, View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
-//import {useAnimatedStyle, useSharedValue} from 'react-native-reanimated';
 import Baby from "./Baby";
 import BabyOnBed from "./BabyOnBed";
 
 const Phase3GamePanel = () => {
-  {/*
-  const vibrateTranslateX=useSharedValue(0);
-
-  const vibrate=useCallback(()=>{
-     vibrateTranslateX.value=100;
-  },[]); 
+    const vibration = useRef(new Animated.Value(0)).current;
+    useEffect(() => {
+      Animated.spring(vibration,{
+        toValue: 1, 
+        useNativeDriver: true,
+        tension: 45,
+        friction: 5,
+      }).start()
+    }, [vibration]);
   
-  const animatedStyle=useAnimatedStyle(()=>{
-    return{
+  const animatedStyle={
         transform:[
-            {translateX:vibrateTranslateX.value}
-        ],
-    };
-  },[]);
-  */}
+            {scale:vibration}
+        ],position: 'absolute',
+        left: 48,
+        top: 52,
+        zIndex: 2,
+  };
   return (
     <View style={styles.container}>
       {/* <Text style={Styles.scoreText}>Score: {score}</Text> */}
