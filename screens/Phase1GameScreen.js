@@ -6,8 +6,9 @@ import Timer from "../components/Timer";
 import Phase1GamePanel from "../components/Phase1GamePanel";
 import Phase1LoadingPanel from "../components/Phase1LoadingPanel";
 import Restart from "../components/Restart";
+import Baby from "../components/Baby";
 
-const Phase1GameScreen = () => {
+const Phase1GameScreen = ({score, setScore}) => {
   const navigation = useNavigation();
 
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
@@ -32,7 +33,7 @@ const Phase1GameScreen = () => {
         onComplete={() => navigation.navigate('Phase1EndScreen')}
         isActive={isLoadingComplete}
       />
-      <Phase1GamePanel />
+      <Phase1GamePanel score={score} setScore={setScore} />
       <View style={styles.night} />
     </View>
   )

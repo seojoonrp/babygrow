@@ -16,7 +16,7 @@ const HomeScreen = () => {
       />
       <TouchableOpacity
         style={Styles.startButton}
-        onPress={() => navigation.navigate('Phase3GameScreen')}
+        onPress={() => navigation.navigate('Phase1GameScreen')}
       >
         <Text style={Styles.buttonText}>START</Text>
       </TouchableOpacity>

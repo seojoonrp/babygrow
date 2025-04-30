@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
-const Baby = ({ positionStyle }) => {
+const Baby = ({ positionStyle, score, setScore }) => {
   const [kneeCount, setKneeCount] = useState(0);
   const [bellyCount, setBellyCount] = useState(0);
 
@@ -24,12 +24,20 @@ const Baby = ({ positionStyle }) => {
       setIsBellyPressed(false);
       bellyTimeoutRef.current = null;
     }, bellyPressDuration);
+
+    setScore(score - 1);
   };
+
+  const handleKneePress = () => {
+    setKneeCount(kneeCount + 1);
+    setScore(score + 1);
+  }
 
   return (
     <View style={[styles.container, positionStyle]}>
       <Text style={{ position: 'absolute', top: 10, left: 12 }}>knee: {kneeCount}</Text>
       <Text style={{ position: 'absolute', top: 27, left: 12 }}>belly: {bellyCount}</Text>
+      <Text style={{ position: 'absolute', top: 44, left: 12 }}>score: {score}</Text>
       <Image
         style={{ zIndex: 2 }}
         source={require('../assets/images/babyBody.png')}
@@ -52,11 +60,11 @@ const Baby = ({ positionStyle }) => {
       />
       <TouchableOpacity
         style={styles.leftKneeBut}
-        onPress={() => setKneeCount(kneeCount + 1)}
+        onPress={handleKneePress}
       />
       <TouchableOpacity
         style={styles.rightKneeBut}
-        onPress={() => setKneeCount(kneeCount + 1)}
+        onPress={handleKneePress}
       />
       <TouchableOpacity
         style={styles.bellyBut}

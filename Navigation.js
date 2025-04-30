@@ -12,27 +12,27 @@ import ResultScreen from './screens/ResultScreen';
 
 const Stack = createStackNavigator();
 
-const StackScreen = () => {
+const StackScreen = ({score, setScore}) => {
   return (
     <Stack.Navigator
       initialRouteName='HomeScreen'
     // screenOptions={{ headerShown: false }} // 위에 스크린/뒤로가기 헤더 안보이게
     >
       <Stack.Screen name='HomeScreen' component={HomeScreen} />
-      <Stack.Screen name='Phase1GameScreen' component={Phase1GameScreen} />
-      <Stack.Screen name='Phase1EndScreen' component={Phase1EndScreen} />
-      <Stack.Screen name='Phase2GameScreen' component={Phase2GameScreen} />
-      <Stack.Screen name='Phase2EndScreen' component={Phase2EndScreen} />
-      <Stack.Screen name='Phase3GameScreen' component={Phase3GameScreen} />
-      <Stack.Screen name='ResultScreen' component={ResultScreen} />
+      <Stack.Screen name='Phase1GameScreen' component={Phase1GameScreen} score={score} setScore={setScore} />
+      <Stack.Screen name='Phase1EndScreen' component={Phase1EndScreen} initialParams={{score, setScore}} />
+      <Stack.Screen name='Phase2GameScreen' component={Phase2GameScreen} initialParams={{score, setScore}} />
+      <Stack.Screen name='Phase2EndScreen' component={Phase2EndScreen} initialParams={{score, setScore}} />
+      <Stack.Screen name='Phase3GameScreen' component={Phase3GameScreen} initialParams={{score, setScore}} />
+      <Stack.Screen name='ResultScreen' component={ResultScreen} initialParams={{score, setScore}} />
     </Stack.Navigator>
   )
 }
 
-const Navigation = () => {
+const Navigation = ({score, setScore}) => {
   return (
     <NavigationContainer>
-      <StackScreen />
+      <StackScreen score={score} setScore={setScore}/>
     </NavigationContainer>
   )
 }

@@ -4,8 +4,9 @@ import * as Font from 'expo-font';
 import Navigation from './Navigation';
 
 const App = () => {
-  // 이미지 로드
+  const [score, setScore] = useState(0);
 
+  // 이미지 로드
   prefetchImages = [
     require("./assets/images/baby.png"),
     require("./assets/images/blanket.png"),
@@ -30,10 +31,12 @@ const App = () => {
       'MurukMuruk': require("./assets/fonts/KCC-Murukmuruk.ttf"),
     }).then(() => setFontsLoaded(true))
   }, []);
+
   if (!fontsLoaded) return null;
+  
 
   return (
-    <Navigation />
+    <Navigation score={score} setScore={setScore}/>
   );
 }
 
