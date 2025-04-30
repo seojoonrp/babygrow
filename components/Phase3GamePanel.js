@@ -6,21 +6,27 @@ import BabyOnBed from "./BabyOnBed";
 const Phase3GamePanel = () => {
     const vibration = useRef(new Animated.Value(0)).current;
     useEffect(() => {
+      Animated.loop(
       Animated.spring(vibration,{
         toValue: 1, 
         useNativeDriver: true,
         tension: 45,
         friction: 5,
-      }).start()
+      })).start()
     }, [vibration]);
   
   const animatedStyle={
-        transform:[
-            {scale:vibration}
-        ],position: 'absolute',
-        left: 48,
+      transform:[
+      {translateX: vibration.interpolate({
+        inputRange: [0,1],
+        outputRange: [48,100],
+      })}
+      ],
+        position: 'absolute',
+        left:48,
         top: 52,
         zIndex: 2,
+        
   };
   return (
     <View style={styles.container}>
