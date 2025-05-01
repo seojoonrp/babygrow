@@ -2,12 +2,12 @@ import React from "react";
 import { TouchableOpacity, StyleSheet, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const Restart = () => {
+const Restart = ({ positionStyle }) => {
   const navigation = useNavigation();
 
   return (
     <TouchableOpacity
-      style={styles.circle}
+      style={[styles.circle, positionStyle]}
       onPress={() => navigation.navigate('HomeScreen')}
     >
       <Image source={require('../assets/images/restartIcon.png')} />

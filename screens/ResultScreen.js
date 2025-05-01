@@ -11,7 +11,6 @@ const ResultScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Restart />
       <Text style={styles.heightText}>우리 아이 키는..</Text>
       <Image
         style={styles.image}

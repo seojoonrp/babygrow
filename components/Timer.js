@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { View, StyleSheet } from "react-native";
 
-const Timer = ({ duration, onComplete, isActive }) => {
+const Timer = ({ duration, onComplete, isActive, style }) => {
   const [progress, setProgress] = useState(1);
   const intervalRef = useRef(null);
 
@@ -33,7 +33,7 @@ const Timer = ({ duration, onComplete, isActive }) => {
   }, [isActive, duration, onComplete]);
 
   return (
-    <View style={styles.background}>
+    <View style={[styles.background, style]}>
       <View style={[styles.bar, { width: `${8 + 92 * progress}%` }]} />
       {/* 8%는 보더 이슈때문에 필요한 최소 보정폭 */}
     </View>
