@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Animated, Easing, View, StyleSheet} from "react-native";
+import { Animated, Easing, View, StyleSheet } from "react-native";
 
 import Baby from "./Baby";
 import BabyOnBed from "./BabyOnBed";
@@ -13,7 +13,7 @@ const Phase2GamePanel = () => {
     Animated.loop(
       Animated.timing(rotation, {
         toValue: 1,
-        duration: 3000,
+        duration: 4000,
         easing: Easing.linear,
         useNativeDriver: true,
       })
@@ -38,7 +38,7 @@ const Phase2GamePanel = () => {
       {/* <Text style={Styles.scoreText}>Score: {score}</Text> */}
       <BabyOnBed isRelative={true} isClickable={false} isBaby={false} />
       <Animated.View style={[animatedStyle]}>
-        <Baby/>
+        <Baby />
       </Animated.View>
     </View>
   );

@@ -44,7 +44,10 @@ const Baby = ({ positionStyle, isPhase3 = false }) => {
       <Text style={{ position: 'absolute', top: 10, right: 12, zIndex: 100 }}>score: {score}</Text>
       {isPhase3 &&
         <View style={styles.greyBackground}>
-
+          <Image
+            style={styles.chairImage}
+            source={require('../assets/images/chair.png')}
+          />
         </View>
       }
       <Image
@@ -89,8 +92,6 @@ const styles = StyleSheet.create({
   container: {
     width: 251,
     height: 480,
-    borderColor: 'black',
-    borderWidth: 1,
     zIndex: 100,
   },
   greyBackground: {
@@ -101,6 +102,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -79,
     right: -21,
+  },
+  chairImage: {
+    right: -100,
   },
   leftJongariIdle: {
     position: 'absolute',
@@ -139,7 +143,7 @@ const styles = StyleSheet.create({
     zIndex: 3,
   },
   leftKneeBut: {
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    backgroundColor: 'rgba(0, 0, 0, 0)',
     width: 50,
     height: 50,
     borderRadius: 25,
@@ -149,7 +153,7 @@ const styles = StyleSheet.create({
     zIndex: 3,
   },
   rightKneeBut: {
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    backgroundColor: 'rgba(0, 0, 0, 0)',
     width: 50,
     height: 50,
     borderRadius: 25,
@@ -159,7 +163,7 @@ const styles = StyleSheet.create({
     zIndex: 3,
   },
   bellyBut: {
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    backgroundColor: 'rgba(0, 0, 0, 0)',
     width: 110,
     height: 110,
     borderRadius: 55,

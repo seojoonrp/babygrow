@@ -18,7 +18,7 @@ const Phase3GameScreen = () => {
       <View style={styles.levelAndTimer}>
         <Text style={styles.levelText}>Lv.3</Text>
         <Timer
-          duration={10000}
+          duration={12}
           onComplete={() => navigation.replace('ResultScreen')}
           isActive={true}
           style={{ transform: [{ rotate: '90deg' }] }}

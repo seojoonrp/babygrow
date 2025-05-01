@@ -29,7 +29,7 @@ const Phase1GameScreen = ({ route }) => {
       <Restart />
       <Text style={styles.levelText}>Lv.1</Text>
       <Timer
-        duration={5}
+        duration={12}
         onComplete={() => navigation.replace('Phase1EndScreen', { score: score })}
         isActive={isLoadingComplete}
       />

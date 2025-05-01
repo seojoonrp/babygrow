@@ -14,7 +14,7 @@ const Phase2GameScreen = () => {
       <Restart />
       <Text style={styles.levelText}>Lv.2</Text>
       <Timer
-        duration={5}
+        duration={12}
         onComplete={() => navigation.replace('Phase2EndScreen')}
         isActive={true}
       />

@@ -51,7 +51,5 @@ const styles = StyleSheet.create({
   container: {
     width: 317,
     height: 663,
-    borderColor: 'black',
-    borderWidth: 1,
   },
 });
