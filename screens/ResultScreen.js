@@ -2,9 +2,12 @@ import React, { useContext } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { AppContext } from "../AppContext";
+
 const ResultScreen = () => {
   const navigation = useNavigation();
+
   const { score, setScore } = useContext(AppContext);
+
   return (
     <View style={styles.container}>
       <Text style={styles.heightText}>우리 아이 키는..</Text>
@@ -40,6 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FF4E4E',
+    zIndex: -2,
   },
   heightText: {
     fontFamily: 'MurukMuruk',
@@ -56,9 +60,10 @@ const styles = StyleSheet.create({
   },
   giraffe2: {
     position: 'absolute',
-    right: 0,
-    top: 0,
-    transform: [{ rotate: '180deg' }]
+    right: -15,
+    top: -50,
+    transform: [{ rotate: '180deg' }],
+    zIndex: -1,
   },
   scoreText: {
     marginTop: 50,

@@ -12,55 +12,55 @@ import ResultScreen from './screens/ResultScreen';
 
 const Stack = createStackNavigator();
 
-const StackScreen = ({score, setScore}) => {
+const StackScreen = ({ score, setScore }) => {
   return (
     <Stack.Navigator
       initialRouteName='HomeScreen'
-    // screenOptions={{ headerShown: false }} // 위에 스크린/뒤로가기 헤더 안보이게
+      screenOptions={{ headerShown: false }} // 위에 스크린/뒤로가기 헤더 안보이게
     >
-      <Stack.Screen 
-        name='HomeScreen' 
-        component={HomeScreen} 
-        initialParams={{score, setScore}} 
+      <Stack.Screen
+        name='HomeScreen'
+        component={HomeScreen}
+        initialParams={{ score, setScore }}
       />
-      <Stack.Screen 
-        name='Phase1GameScreen' 
-        component={Phase1GameScreen} 
-        initialParams={{score, setScore}} 
+      <Stack.Screen
+        name='Phase1GameScreen'
+        component={Phase1GameScreen}
+        initialParams={{ score, setScore }}
       />
-      <Stack.Screen 
-        name='Phase1EndScreen' 
-        component={Phase1EndScreen} 
-        initialParams={{score, setScore}} 
+      <Stack.Screen
+        name='Phase1EndScreen'
+        component={Phase1EndScreen}
+        initialParams={{ score, setScore }}
       />
-      <Stack.Screen 
-        name='Phase2GameScreen' 
-        component={Phase2GameScreen} 
-        initialParams={{score, setScore}} 
+      <Stack.Screen
+        name='Phase2GameScreen'
+        component={Phase2GameScreen}
+        initialParams={{ score, setScore }}
       />
-      <Stack.Screen 
-        name='Phase2EndScreen' 
-        component={Phase2EndScreen} 
-        initialParams={{score, setScore}} 
+      <Stack.Screen
+        name='Phase2EndScreen'
+        component={Phase2EndScreen}
+        initialParams={{ score, setScore }}
       />
-      <Stack.Screen 
-        name='Phase3GameScreen' 
-        component={Phase3GameScreen} 
-        initialParams={{score, setScore}} 
+      <Stack.Screen
+        name='Phase3GameScreen'
+        component={Phase3GameScreen}
+        initialParams={{ score, setScore }}
       />
-      <Stack.Screen 
-        name='ResultScreen' 
-        component={ResultScreen} 
-        initialParams={{score, setScore}} 
+      <Stack.Screen
+        name='ResultScreen'
+        component={ResultScreen}
+        initialParams={{ score, setScore }}
       />
     </Stack.Navigator>
   )
 }
 
-const Navigation = ({score, setScore}) => {
+const Navigation = ({ score, setScore }) => {
   return (
     <NavigationContainer>
-      <StackScreen score={score} setScore={setScore}/>
+      <StackScreen score={score} setScore={setScore} />
     </NavigationContainer>
   )
 }
