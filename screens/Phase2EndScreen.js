@@ -7,7 +7,7 @@ import Restart from "../components/Restart";
 const Phase2EndScreen = () => {
   const navigation = useNavigation();
 
-  const duration = 100000;
+  const duration = 5000;
 
   // duration(5초)가 지나면 handleOnComplete를 실행하는 코드.
   useEffect(() => {

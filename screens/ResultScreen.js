@@ -1,20 +1,31 @@
-import React,{useContext} from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useContext } from "react";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { AppContext } from "../AppContext";
 const ResultScreen = () => {
   const navigation = useNavigation();
-  const {score,setScore}=useContext(AppContext);
+  const { score, setScore } = useContext(AppContext);
   return (
     <View style={styles.container}>
-      <View style={styles.heightTextContainer}>
-        <Text style={styles.heightText}>우리 아이 키는...{score}</Text>
-      </View>
+      <Text style={styles.heightText}>우리 아이 키는..</Text>
+      <Image
+        style={styles.image}
+        source={require('../assets/images/ending.png')}
+      />
+      <Text style={styles.scoreText}>{score}cm</Text>
+      <Image
+        style={styles.giraffe1}
+        source={require('../assets/images/giraffe.png')}
+      />
+      <Image
+        style={styles.giraffe2}
+        source={require('../assets/images/giraffe.png')}
+      />
       <TouchableOpacity
-        style={styles.navigateButton}
+        style={styles.restartBut}
         onPress={() => navigation.navigate('HomeScreen')}
       >
-        <Text style={styles.buttonText}>내 아기 다시 키우기</Text>
+        <Text style={styles.buttonText}>다시키우기</Text>
       </TouchableOpacity>
     </View>
   )
@@ -26,34 +37,46 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    backgroundColor: '#FFECCD',
-  },
-  heightTextContainer: {
-    display: 'flex',
-    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '100%',
-    paddingHorizontal: 8,
-    marginBottom: 14,
-    backgroundColor: '##FFFEF4',
-    borderColor: '#F7C89C',
-    borderWidth: 4,
-    borderRadius: 13,
+    backgroundColor: '#FF4E4E',
   },
   heightText: {
-
+    fontFamily: 'MurukMuruk',
+    fontSize: 24,
+    color: '#F8DCAF'
   },
-  navigateButton: {
-    backgroundColor: 'black',
-    marginTop: '7%',
-    padding: 7,
-    borderRadius: 4
+  image: {
+    marginTop: 11,
+  },
+  giraffe1: {
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+  },
+  giraffe2: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    transform: [{ rotate: '180deg' }]
+  },
+  scoreText: {
+    marginTop: 50,
+    fontFamily: 'MurukMuruk',
+    fontSize: 66,
+    color: '#FFFEF4',
+  },
+  restartBut: {
+    position: 'absolute',
+    bottom: 30,
+    backgroundColor: '#F8DCAF',
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 13
   },
   buttonText: {
-    fontSize: 15,
-    color: 'white'
+    fontFamily: 'MurukMuruk',
+    fontSize: 24,
+    color: '#FFFEF4'
   }
 })
