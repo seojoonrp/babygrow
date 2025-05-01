@@ -7,7 +7,7 @@ import Restart from "../components/Restart";
 const Phase2EndScreen = () => {
   const navigation = useNavigation();
 
-  const duration = 1000000;
+  const duration = 5000;
 
   // duration(5초)가 지나면 handleOnComplete를 실행하는 코드.
   useEffect(() => {
@@ -29,7 +29,7 @@ const Phase2EndScreen = () => {
       <Text style={[styles.text, { color: '#F7C89C', fontSize: 36, marginTop: -20 }]}>level up!</Text>
       <Image
         style={styles.image}
-        source={require('../assets/images/phase2LoadingImage.png')}
+        source={require('../assets/images/phase3LoadingImage.png')}
       />
       <Text style={[styles.text, { marginTop: 15 }]}>한눈 판 사이 아기가 사라졌어요!</Text>
       <Text style={[styles.text, { marginTop: -7 }]}>어디로 갔을까요?</Text>

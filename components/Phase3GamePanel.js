@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Animated, View, StyleSheet } from "react-native";
 import Baby from "./Baby";
-import BabyOnBed from "./BabyOnBed";
 
 const Phase3GamePanel = () => {
   const vibration = useRef(new Animated.Value(0.9)).current;
@@ -11,7 +10,7 @@ const Phase3GamePanel = () => {
       Animated.spring(vibration, {
         toValue: 1,
         useNativeDriver: true,
-        speed:30,
+        speed: 30,
         bounciness: 20,
       })).start()
   }, [vibration]);
@@ -34,7 +33,7 @@ const Phase3GamePanel = () => {
   return (
     <View style={styles.container}>
       <Animated.View style={[animatedStyle]}>
-        <Baby/>
+        <Baby />
       </Animated.View>
     </View>
   );

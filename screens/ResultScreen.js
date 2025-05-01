@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { AppContext } from "../AppContext";
-import Restart from "../components/Restart";
 
 const ResultScreen = () => {
   const navigation = useNavigation();
@@ -15,7 +14,7 @@ const ResultScreen = () => {
         style={styles.image}
         source={require('../assets/images/ending.png')}
       />
-      <Text style={styles.scoreText}>{score>0 ? '${score}cm':'0cm'}</Text>
+      <Text style={styles.scoreText}>{score > 0 ? score : 0}cm</Text>
       <Image
         style={styles.giraffe1}
         source={require('../assets/images/giraffe.png')}

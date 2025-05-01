@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useState } from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import { AppContext } from "../AppContext";
+
 // Make sure we're receiving score and setScore as props here
 const Baby = ({ positionStyle }) => {
   const { score, setScore } = useContext(AppContext);
