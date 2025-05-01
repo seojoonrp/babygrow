@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React from "react";
+import { View, Text, StyleSheet} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import Timer from "../components/Timer";

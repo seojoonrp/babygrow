@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { View, StyleSheet } from "react-native";
 
 import BabyOnBed from "./BabyOnBed";
 import Baby from "./Baby";
 
 // Receive score and setScore as props
-const Phase1GamePanel = ({ score }) => {
+const Phase1GamePanel = () => {
 
   return (
     <View style={styles.container}>
       <BabyOnBed isRelative={true} isClickable={true} isBaby={false} />
-      <Baby positionStyle={{ position: 'absolute', top: 48, left: 55, zIndex: 2 }} score={score} />
+      <Baby positionStyle={{ position: 'absolute', top: 48, left: 55, zIndex: 2 }} />
     </View>
   );
 };

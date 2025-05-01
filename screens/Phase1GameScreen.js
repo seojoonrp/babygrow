@@ -6,7 +6,6 @@ import Timer from "../components/Timer";
 import Phase1GamePanel from "../components/Phase1GamePanel";
 import Phase1LoadingPanel from "../components/Phase1LoadingPanel";
 import Restart from "../components/Restart";
-import Baby from "../components/Baby";
 
 const Phase1GameScreen = ({route}) => {
   const navigation = useNavigation();

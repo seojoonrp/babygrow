@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Animated, Easing, View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
+import React, { useRef, useEffect } from "react";
+import { Animated, View, StyleSheet} from "react-native";
 import Baby from "./Baby";
 import BabyOnBed from "./BabyOnBed";
 
