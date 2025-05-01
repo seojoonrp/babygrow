@@ -1,15 +1,15 @@
-import React, {useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import { AppContext } from "../AppContext";
 // Make sure we're receiving score and setScore as props here
-const Baby = ({ positionStyle}) => {
-  const {score,setScore}=useContext(AppContext);
+const Baby = ({ positionStyle }) => {
+  const { score, setScore } = useContext(AppContext);
 
   const [kneeCount, setKneeCount] = useState(0);
   const [bellyCount, setBellyCount] = useState(0);
 
   const [isBellyPressed, setIsBellyPressed] = useState(false);
-  const bellyPressDuration = 1000;
+  const bellyPressDuration = 700;
   const bellyTimeoutRef = useRef(null);
 
   const leftJongariStyle = kneeCount % 2 === 0 ? styles.leftJongariIdle : styles.leftJongariPressed;
@@ -28,12 +28,12 @@ const Baby = ({ positionStyle}) => {
       bellyTimeoutRef.current = null;
     }, bellyPressDuration);
 
-    setScore(score-1);
+    setScore(score - 1);
   };
 
   const handleKneePress = () => {
     setKneeCount(kneeCount + 1);
-    setScore(score+1);
+    setScore(score + 1);
   }
 
   return (
