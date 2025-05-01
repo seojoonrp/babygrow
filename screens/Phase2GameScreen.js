@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import Timer from "../components/Timer";
@@ -14,7 +14,7 @@ const Phase2GameScreen = () => {
       <Restart />
       <Text style={styles.levelText}>Lv.2</Text>
       <Timer
-        duration={10}
+        duration={5}
         onComplete={() => navigation.navigate('Phase2EndScreen')}
         isActive={true}
       />
