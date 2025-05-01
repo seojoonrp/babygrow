@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { AppContext } from "../AppContext";
+import Restart from "../components/Restart";
 
 const ResultScreen = () => {
   const navigation = useNavigation();
@@ -10,6 +11,7 @@ const ResultScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Restart />
       <Text style={styles.heightText}>우리 아이 키는..</Text>
       <Image
         style={styles.image}
