@@ -7,7 +7,7 @@ import Restart from "../components/Restart";
 const Phase2EndScreen = () => {
   const navigation = useNavigation();
 
-  const duration = 5000;
+  const duration = 900;
 
   // duration(5초)가 지나면 handleOnComplete를 실행하는 코드.
   useEffect(() => {
@@ -20,7 +20,7 @@ const Phase2EndScreen = () => {
   }, [])
 
   const handleOnComplete = () => {
-    navigation.replace('Phase3GameScreen');
+    navigation.navigate('Phase3GameScreen');
   }
 
   return (

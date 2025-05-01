@@ -10,7 +10,7 @@ const Phase3GamePanel = () => {
       Animated.spring(vibration, {
         toValue: 1,
         useNativeDriver: true,
-        speed: 30,
+        speed: 35,
         bounciness: 20,
       })).start()
   }, [vibration]);
@@ -20,20 +20,26 @@ const Phase3GamePanel = () => {
       {
         translateX: vibration.interpolate({
           inputRange: [0.9, 1],
-          outputRange: [90, 100],
+          outputRange: [75, 125],
+        })
+      },
+      {
+        translateY: vibration.interpolate({
+          inputRange: [0.9, 1],
+          outputRange: [-3, 3],
         })
       }
     ],
     position: 'absolute',
-    left: 0,
-    top: 52,
+    left: -56,
+    top: 77,
     zIndex: 2,
   };
 
   return (
     <View style={styles.container}>
       <Animated.View style={[animatedStyle]}>
-        <Baby />
+        <Baby isPhase3={true} />
       </Animated.View>
     </View>
   );

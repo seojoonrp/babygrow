@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import { AppContext } from "../AppContext";
 
 // Make sure we're receiving score and setScore as props here
-const Baby = ({ positionStyle }) => {
+const Baby = ({ positionStyle, isPhase3 = false }) => {
   const { score, setScore } = useContext(AppContext);
 
   const [kneeCount, setKneeCount] = useState(0);
@@ -39,9 +39,14 @@ const Baby = ({ positionStyle }) => {
 
   return (
     <View style={[styles.container, positionStyle]}>
-      <Text style={{ position: 'absolute', top: 10, left: 12 }}>knee: {kneeCount}</Text>
-      <Text style={{ position: 'absolute', top: 27, left: 12 }}>belly: {bellyCount}</Text>
-      <Text style={{ position: 'absolute', top: 10, right: 12 }}>score: {score}</Text>
+      <Text style={{ position: 'absolute', top: 10, left: 12, zIndex: 100 }}>knee: {kneeCount}</Text>
+      <Text style={{ position: 'absolute', top: 27, left: 12, zIndex: 100 }}>belly: {bellyCount}</Text>
+      <Text style={{ position: 'absolute', top: 10, right: 12, zIndex: 100 }}>score: {score}</Text>
+      {isPhase3 &&
+        <View style={styles.greyBackground}>
+
+        </View>
+      }
       <Image
         style={{ zIndex: 2 }}
         source={require('../assets/images/babyBody.png')}
@@ -86,6 +91,16 @@ const styles = StyleSheet.create({
     height: 480,
     borderColor: 'black',
     borderWidth: 1,
+    zIndex: 100,
+  },
+  greyBackground: {
+    width: 400,
+    height: 663,
+    backgroundColor: '#D9E1E7',
+    borderRadius: 20,
+    position: 'absolute',
+    top: -79,
+    right: -21,
   },
   leftJongariIdle: {
     position: 'absolute',
