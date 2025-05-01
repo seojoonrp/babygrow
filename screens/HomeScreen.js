@@ -19,7 +19,7 @@ const HomeScreen = () => {
       />
       <TouchableOpacity
         style={Styles.startButton}
-        onPress={() => navigation.navigate('Phase1GameScreen')}
+        onPress={() => navigation.replace('Phase1GameScreen')}
       >
         <Text style={Styles.buttonText}>START</Text>
       </TouchableOpacity>

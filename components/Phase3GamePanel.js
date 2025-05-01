@@ -4,15 +4,15 @@ import Baby from "./Baby";
 import BabyOnBed from "./BabyOnBed";
 
 const Phase3GamePanel = () => {
-  const vibration = useRef(new Animated.Value(0)).current;
+  const vibration = useRef(new Animated.Value(0.9)).current;
 
   useEffect(() => {
     Animated.loop(
       Animated.spring(vibration, {
         toValue: 1,
         useNativeDriver: true,
-        tension: 45,
-        friction: 5,
+        speed:30,
+        bounciness: 20,
       })).start()
   }, [vibration]);
 
@@ -20,13 +20,13 @@ const Phase3GamePanel = () => {
     transform: [
       {
         translateX: vibration.interpolate({
-          inputRange: [0, 1],
-          outputRange: [48, 100],
+          inputRange: [0.9, 1],
+          outputRange: [90, 100],
         })
       }
     ],
     position: 'absolute',
-    left: 48,
+    left: 0,
     top: 52,
     zIndex: 2,
   };
@@ -34,7 +34,7 @@ const Phase3GamePanel = () => {
   return (
     <View style={styles.container}>
       <Animated.View style={[animatedStyle]}>
-        <Baby positionStyle={{ position: 'absolute', top: 0, left: 0, zIndex: 2 }} />
+        <Baby/>
       </Animated.View>
     </View>
   );

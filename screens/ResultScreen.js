@@ -8,7 +8,6 @@ const ResultScreen = () => {
   const navigation = useNavigation();
 
   const { score, setScore } = useContext(AppContext);
-
   return (
     <View style={styles.container}>
       <Text style={styles.heightText}>우리 아이 키는..</Text>
@@ -16,7 +15,7 @@ const ResultScreen = () => {
         style={styles.image}
         source={require('../assets/images/ending.png')}
       />
-      <Text style={styles.scoreText}>{score}cm</Text>
+      <Text style={styles.scoreText}>{score>0 ? '${score}cm':'0cm'}</Text>
       <Image
         style={styles.giraffe1}
         source={require('../assets/images/giraffe.png')}
@@ -27,7 +26,7 @@ const ResultScreen = () => {
       />
       <TouchableOpacity
         style={styles.restartBut}
-        onPress={() => navigation.navigate('HomeScreen')}
+        onPress={() => navigation.replace('HomeScreen')}
       >
         <Text style={styles.buttonText}>다시키우기</Text>
       </TouchableOpacity>

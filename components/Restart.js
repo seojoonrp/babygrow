@@ -8,7 +8,7 @@ const Restart = ({ positionStyle }) => {
   return (
     <TouchableOpacity
       style={[styles.circle, positionStyle]}
-      onPress={() => navigation.navigate('HomeScreen')}
+      onPress={() => navigation.replace('HomeScreen')}
     >
       <Image source={require('../assets/images/restartIcon.png')} />
     </TouchableOpacity>

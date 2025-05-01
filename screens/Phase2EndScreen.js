@@ -20,7 +20,7 @@ const Phase2EndScreen = () => {
   }, [])
 
   const handleOnComplete = () => {
-    navigation.navigate('Phase3GameScreen');
+    navigation.replace('Phase3GameScreen');
   }
 
   return (
