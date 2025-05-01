@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import Restart from "../components/Restart";
 
 const Phase1EndScreen = () => {
   const navigation = useNavigation();
@@ -23,8 +24,9 @@ const Phase1EndScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={[styles.text, { color: '#F7C89C' }]}>level up!</Text>
-      <Text style={[styles.text, { marginTop: 273 }]}>아기가 움직이기 시작해요!</Text>
+      <Restart />
+      <Text style={[styles.text, { color: '#F7C89C', fontSize: 36 }]}>level up!</Text>
+      <Text style={[styles.text, { color: '#FF4E4E', marginTop: 13 }]}>아기가 움직이기 시작해요!</Text>
       <Text style={styles.text}>놓치지 말고 성장판을 자극해주세요</Text>
     </View>
   )
@@ -38,12 +40,12 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFECCD',
+    backgroundColor: '#FFFEF4',
   },
   text: {
     textAlign: 'center',
     color: '#F8DCAF',
     fontFamily: 'MurukMuruk',
-    fontSize: 21,
+    fontSize: 24,
   },
 })

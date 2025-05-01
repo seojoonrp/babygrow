@@ -7,7 +7,7 @@ import Phase1GamePanel from "../components/Phase1GamePanel";
 import Phase1LoadingPanel from "../components/Phase1LoadingPanel";
 import Restart from "../components/Restart";
 
-const Phase1GameScreen = ({route}) => {
+const Phase1GameScreen = ({ route }) => {
   const navigation = useNavigation();
   const score = route.params.score;
 
@@ -29,8 +29,8 @@ const Phase1GameScreen = ({route}) => {
       <Restart />
       <Text style={styles.levelText}>Lv.1</Text>
       <Timer
-        duration={10}
-        onComplete={() => navigation.navigate('Phase1EndScreen', {score: score})}
+        duration={5}
+        onComplete={() => navigation.navigate('Phase1EndScreen', { score: score })}
         isActive={isLoadingComplete}
       />
       <Phase1GamePanel score={score} />
