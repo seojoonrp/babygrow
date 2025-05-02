@@ -29,7 +29,7 @@ const Baby = ({ positionStyle, isPhase3 = false }) => {
       bellyTimeoutRef.current = null;
     }, bellyPressDuration);
 
-    setScore(score - 1);
+    setScore(score - 30);
   };
 
   const handleKneePress = () => {

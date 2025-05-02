@@ -9,6 +9,7 @@ import Restart from "../components/Restart";
 
 const Phase1GameScreen = ({ route }) => {
   const navigation = useNavigation();
+
   const score = route.params.score;
 
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
@@ -21,7 +22,7 @@ const Phase1GameScreen = ({ route }) => {
       {!isLoadingComplete &&
         <View style={styles.loadingPanel} >
           <Phase1LoadingPanel
-            duration={3}
+            duration={5}
             onComplete={handleLoadingComplete}
           />
         </View>

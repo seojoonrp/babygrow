@@ -14,7 +14,7 @@ const ResultScreen = () => {
         style={styles.image}
         source={require('../assets/images/ending.png')}
       />
-      <Text style={styles.scoreText}>{score > 0 ? score : 0}cm</Text>
+      <Text style={styles.scoreText}>{score}cm</Text>
       <Image
         style={styles.giraffe1}
         source={require('../assets/images/giraffe.png')}

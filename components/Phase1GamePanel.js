@@ -4,9 +4,7 @@ import { View, StyleSheet } from "react-native";
 import BabyOnBed from "./BabyOnBed";
 import Baby from "./Baby";
 
-// Receive score and setScore as props
 const Phase1GamePanel = () => {
-
   return (
     <View style={styles.container}>
       <BabyOnBed isRelative={true} isClickable={true} isBaby={false} />
